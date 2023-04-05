@@ -4,7 +4,6 @@
 
 bool DahenCamera::camInit() {
 	bool init_status=true;
-	IGXFactory::GetInstance().Init();
 
 	//遍历枚举相机
 	GxIAPICPP::gxdeviceinfo_vector vectorDeviceInfo;
@@ -73,8 +72,7 @@ bool DahenCamera::close() {
 	_pCaptureEventHandler = NULL;
 	//关闭流通道
 	_objStreamPtr->Close();
-	// 
-	IGXFactory::GetInstance().Uninit();
+
 	std::cout << "camera " << _camera_sn << " close success!!!" << std::endl;
 	return close_status;
 }

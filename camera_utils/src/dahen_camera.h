@@ -40,6 +40,9 @@ public:
 	bool setExposure(int exposure);
 	bool close();
 
+	static void libInit() { IGXFactory::GetInstance().Init(); }
+	static void libUinit() { IGXFactory::GetInstance().Uninit(); }
+
 private:
 	CGXDevicePointer _objDevicePtr;
 	CGXStreamPointer _objStreamPtr;
