@@ -43,13 +43,12 @@ public:
 private:
 	CGXDevicePointer _objDevicePtr;
 	CGXStreamPointer _objStreamPtr;
-	ICaptureEventHandler* _pCaptureEventHandler;
 	CGXFeatureControlPointer _objFeatureControlPtr;
+	ICaptureEventHandler* _pCaptureEventHandler=nullptr;
 
 	const char* _camera_sn;
 	cv::Size _image_size;
 	CameraFrame _camera_frame = CameraFrame(false);
-	volatile int jk;
 };
 
 
